@@ -1,0 +1,16 @@
+version: '3'
+services:
+  explorer:
+    image: rakd/weavedb-explorer
+    # build:
+    #   context: .
+    #   dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    # volumes:
+    #   # to sync settings
+    #   - ./lib:/weavedb-explorer/lib
+    environment:
+      - ADDITIONAL_NODE_ENDPOINT="localhost:8080"
+      - ADDITIONAL_NODE_NETWORK="Localhost"
+      - ADDITIONAL_NODE_KEY="localhost"
